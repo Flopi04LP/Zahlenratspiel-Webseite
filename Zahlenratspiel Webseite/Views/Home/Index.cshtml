@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<body>
+    <form action="/Home/index" method="post">
+        <h5>Geben sie eine Zahl zwischen 0-100 ein</h5>
+        <label for="numbereingabe">Zahl:</label>
+        <input type="number" name="eingabe" required />
+        <small id="numbereingabe" class="form-text text-muted">@ViewBag.ERROR</small>
+        <small>Versuche: @Session.Contents["tries"]</small>
+        <br />
+        <input type="submit" name="Senden" />
+
+    </form>
+    
+    <br />
+    <h5>@Session.Contents["ausgabe"]</h5>
+    
+
+</body>
+
